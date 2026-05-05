@@ -19,7 +19,7 @@
           <h3>Homepage</h3>
         </div>
       </div>
-      <button class="notif-btn"><i class="ri-notification-3-line"></i></button>
+      <button class="notif-btn" type="button"><i class="ri-notification-3-line"></i></button>
     </header>
 
     <section class="hero-card">
@@ -30,7 +30,7 @@
           <h2>Mark Anthony Caitor</h2>
           <span>Class of 2026 · BS Computer Science</span>
         </div>
-        <button class="doc-btn"><i class="ri-file-list-3-line"></i></button>
+        <button class="doc-btn" type="button"><i class="ri-file-list-3-line"></i></button>
       </div>
 
       <div class="progress-box">
@@ -63,7 +63,7 @@
             <h3>Complete Your Profile</h3>
             <p>Answer the Alumni Info Sheet</p>
           </div>
-          <button class="dark-btn">Review <i class="ri-arrow-right-line"></i></button>
+          <button class="dark-btn" type="button">Review <i class="ri-arrow-right-line"></i></button>
         </div>
         <div class="task-bottom"><span>Profile completion</span><strong>100%</strong></div>
         <div class="mini-progress"><div class="mini-fill green" style="width:100%"></div></div>
@@ -76,7 +76,7 @@
             <h3>Job Orientation Seminar</h3>
             <p>Attendance and Evaluation</p>
           </div>
-          <button class="dark-btn" id="openSeminarBtn">View <i class="ri-arrow-right-line"></i></button>
+          <button class="dark-btn" type="button" id="openSeminarBtn">View <i class="ri-arrow-right-line"></i></button>
         </div>
         <div class="task-bottom"><span>1 of 2 sessions</span><strong>50%</strong></div>
         <div class="mini-progress"><div class="mini-fill blue-fill" style="width:50%"></div></div>
@@ -89,7 +89,7 @@
             <h3>Labor Education Seminar</h3>
             <p>Attendance and Evaluation</p>
           </div>
-          <button class="light-btn">View</button>
+          <button class="light-btn" type="button">View</button>
         </div>
         <div class="task-bottom"><span>Scheduled soon</span><strong>8%</strong></div>
         <div class="mini-progress"><div class="mini-fill orange-fill" style="width:8%"></div></div>
@@ -102,7 +102,7 @@
             <h3>Printed Forms</h3>
             <p>NSRP, Data Privacy, Waiver</p>
           </div>
-          <button class="dark-btn" id="openPrintedFormsBtn">View <i class="ri-arrow-right-line"></i></button>
+          <button class="dark-btn" type="button" id="openPrintedFormsBtn">View <i class="ri-arrow-right-line"></i></button>
         </div>
         <div class="task-bottom"><span>2 of 3 forms</span><strong>66%</strong></div>
         <div class="mini-progress"><div class="mini-fill blue-fill" style="width:66%"></div></div>
@@ -115,7 +115,7 @@
             <h3>Alumni Fee</h3>
             <p>Verify or pay at Cashiering Office</p>
           </div>
-          <button class="dark-btn">Receipt <i class="ri-arrow-right-line"></i></button>
+          <button class="dark-btn" type="button">Receipt <i class="ri-arrow-right-line"></i></button>
         </div>
         <div class="task-bottom"><span>Payment confirmed</span><strong>100%</strong></div>
         <div class="mini-progress"><div class="mini-fill green" style="width:100%"></div></div>
@@ -126,9 +126,9 @@
   <!-- SEMINAR -->
   <main class="screen" id="seminarScreen">
     <header class="seminar-topbar">
-      <button class="back-btn" data-go="home"><i class="ri-arrow-left-s-line"></i></button>
+      <button class="back-btn" type="button" data-go="home"><i class="ri-arrow-left-s-line"></i></button>
       <div>
-        <span class="brand-small">CLEARANCE HUB · JOBS</span>
+        <span class="brand-small">CLEARANCE HUB</span>
         <h3>Job Orientation Seminar</h3>
       </div>
     </header>
@@ -199,7 +199,7 @@
         <span class="badge green-badge">DONE</span>
       </div>
 
-      <button class="certificate-btn"><i class="ri-award-line"></i> Request Certificate</button>
+      <button class="certificate-btn" type="button"><i class="ri-award-line"></i> Request Certificate</button>
       <p class="bottom-note">Complete all requirements to unlock your certificate.</p>
     </section>
   </main>
@@ -207,9 +207,9 @@
   <!-- PRINTED FORMS -->
   <main class="screen" id="printedFormsScreen">
     <header class="seminar-topbar">
-      <button class="back-btn" data-go="home"><i class="ri-arrow-left-s-line"></i></button>
+      <button class="back-btn" type="button" data-go="home"><i class="ri-arrow-left-s-line"></i></button>
       <div>
-        <span class="brand-small">CLEARANCE HUB · JOBS</span>
+        <span class="brand-small">CLEARANCE HUB</span>
         <h3>Printed Forms</h3>
       </div>
     </header>
@@ -218,10 +218,28 @@
       <h1>Printed Forms</h1>
       <p>Complete all required documents to proceed with clearance.</p>
 
-      <div class="forms-progress-clean">
-        <span>Progress</span>
-        <strong>3 / 3 Completed</strong>
+    <div class="forms-progress-box">
+      <div class="forms-progress-top">
+        <div>
+          <span>OVERALL PROGRESS</span>
+          <h1>100%</h1>
+        </div>
+
+        <div class="completed">
+          <span>Completed</span>
+          <h2>3 / 3</h2>
+        </div>
       </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" style="width:100%"></div>
+      </div>
+    </div>
+    </section>
+
+    <section class="forms-note">
+      <strong>Instructions</strong>
+      <p>Please request these documents at CARES Office, Thank you.</p>
     </section>
 
     <section class="forms-list-clean">
@@ -238,31 +256,18 @@
 
         <div class="form-expand">
           <div class="form-flow">
-            <button
-              class="form-image-btn"
-              type="button"
-              data-expand-image="NSRP.jpg"
-              aria-label="Expand NSRP form image"
-            >
-              <img
-                src="NSRP.jpg"
-                alt="NSRP form preview"
-                class="form-image"
-              />
-              <span class="expand-hint">
-                <i class="ri-zoom-in-line"></i> Tap to expand
-              </span>
+            <button class="form-image-btn" type="button" data-expand-image="NSRP.jpg" aria-label="Expand NSRP form image">
+              <img src="NSRP.jpg" alt="NSRP form preview" class="form-image" />
+              <span class="expand-hint"><i class="ri-zoom-in-line"></i> Tap to expand</span>
             </button>
 
             <div class="form-description">
               <p>
                 The National Skills Registration Program (NSRP) is a program initiated by the Department of Labor and Employment (DOLE) that aims to create and maintain a nationwide database of skilled workers, jobseekers, and employers through the Skills Registry System (SRS) and the PESO Employment Information System (PEIS).
               </p>
-
               <p>
                 It serves as an employment facilitation program that helps connect qualified individuals with job opportunities based on their skills, qualifications, and work experience.
               </p>
-
               <p>
                 The NSRP supports Public Employment Service Offices (PESOs) in matching jobseekers with employers, while also helping the government identify workforce needs and develop appropriate employment and training programs nationwide.
               </p>
@@ -289,31 +294,18 @@
 
         <div class="form-expand">
           <div class="form-flow">
-            <button
-              class="form-image-btn"
-              type="button"
-              data-expand-image="Waiver.jpg"
-              aria-label="Expand Waiver form image"
-            >
-              <img
-                src="Waiver.jpg"
-                alt="Waiver form preview"
-                class="form-image"
-              />
-              <span class="expand-hint">
-                <i class="ri-zoom-in-line"></i> Tap to expand
-              </span>
+            <button class="form-image-btn" type="button" data-expand-image="Waiver.jpg" aria-label="Expand Waiver form image">
+              <img src="Waiver.jpg" alt="Waiver form preview" class="form-image" />
+              <span class="expand-hint"><i class="ri-zoom-in-line"></i> Tap to expand</span>
             </button>
 
             <div class="form-description">
               <p>
                 The National Skills Registration Program (NSRP) is a program initiated by the Department of Labor and Employment (DOLE) that aims to create and maintain a nationwide database of skilled workers, jobseekers, and employers through the Skills Registry System (SRS) and the PESO Employment Information System (PEIS).
               </p>
-
               <p>
                 It serves as an employment facilitation program that helps connect qualified individuals with job opportunities based on their skills, qualifications, and work experience.
               </p>
-
               <p>
                 The NSRP supports Public Employment Service Offices (PESOs) in matching jobseekers with employers, while also helping the government identify workforce needs and develop appropriate employment and training programs nationwide.
               </p>
@@ -340,31 +332,18 @@
 
         <div class="form-expand">
           <div class="form-flow">
-            <button
-              class="form-image-btn"
-              type="button"
-              data-expand-image="DP.jpg"
-              aria-label="Expand Data Privacy form image"
-            >
-              <img
-                src="DP.jpg"
-                alt="Data Privacy form preview"
-                class="form-image"
-              />
-              <span class="expand-hint">
-                <i class="ri-zoom-in-line"></i> Tap to expand
-              </span>
+            <button class="form-image-btn" type="button" data-expand-image="DP.jpg" aria-label="Expand Data Privacy form image">
+              <img src="DP.jpg" alt="Data Privacy form preview" class="form-image" />
+              <span class="expand-hint"><i class="ri-zoom-in-line"></i> Tap to expand</span>
             </button>
 
             <div class="form-description">
               <p>
                 The National Skills Registration Program (NSRP) is a program initiated by the Department of Labor and Employment (DOLE) that aims to create and maintain a nationwide database of skilled workers, jobseekers, and employers through the Skills Registry System (SRS) and the PESO Employment Information System (PEIS).
               </p>
-
               <p>
                 It serves as an employment facilitation program that helps connect qualified individuals with job opportunities based on their skills, qualifications, and work experience.
               </p>
-
               <p>
                 The NSRP supports Public Employment Service Offices (PESOs) in matching jobseekers with employers, while also helping the government identify workforce needs and develop appropriate employment and training programs nationwide.
               </p>
