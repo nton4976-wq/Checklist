@@ -25,70 +25,83 @@ if (openPrintedFormsBtn) {
   openPrintedFormsBtn.addEventListener('click', () => showScreen(printedFormsScreen));
 }
 
-/* PRINTED FORMS ACCORDION */
+//* PRINTED FORMS ACCORDION */
 const cards = Array.from(document.querySelectorAll('[data-accordion]'));
 
-function setBodyHeight(card, expanded) {
+function setBodyHeight(card) {
   const body = card.querySelector('.form-expand');
   if (!body) return;
 
-  if (expanded) {
-    body.style.maxHeight = body.scrollHeight + 24 + 'px';
-  } else {
-    body.style.maxHeight = '0px';
+  body.style.maxHeight = body.scrollHeight + 50 + 'px';
+}
+
+function openCard(card) {
+  cards.forEach(other => {
+    if (other !== card) {
+      other.classList.remove('open');
+      const otherBody = other.querySelector('.form-expand');
+      if (otherBody) otherBody.style.maxHeight = '0px';
+    }
+  });
+
+  card.classList.add('open');
+
+  const body = card.querySelector('.form-expand');
+  if (body) {
+    body.style.maxHeight = 'none'; // reset first
+    setTimeout(() => {
+      setBodyHeight(card);
+    }, 10);
   }
 }
 
 function closeCard(card) {
   card.classList.remove('open');
-  setBodyHeight(card, false);
+  const body = card.querySelector('.form-expand');
+  if (body) body.style.maxHeight = '0px';
 }
 
-function openCard(card) {
-  cards.forEach((other) => {
-    if (other !== card) closeCard(other);
-  });
-
-  card.classList.add('open');
-  setBodyHeight(card, true);
+function toggleCard(card) {
+  if (card.classList.contains('open')) {
+    closeCard(card);
+  } else {
+    openCard(card);
+  }
 }
 
-function updateHeights() {
-  cards.forEach((card) => {
-    setBodyHeight(card, card.classList.contains('open'));
-  });
-}
-
-cards.forEach((card) => {
+cards.forEach(card => {
   const header = card.querySelector('.form-header');
   if (!header) return;
 
-  let clickTimer = null;
-
   header.addEventListener('click', () => {
-    if (clickTimer) return;
-
-    clickTimer = setTimeout(() => {
-      openCard(card);
-      clickTimer = null;
-    }, 220);
-  });
-
-  header.addEventListener('dblclick', (e) => {
-    e.preventDefault();
-
-    if (clickTimer) {
-      clearTimeout(clickTimer);
-      clickTimer = null;
-    }
-
-    closeCard(card);
+    toggleCard(card);
   });
 });
 
-window.addEventListener('resize', updateHeights);
-window.addEventListener('load', updateHeights);
-updateHeights();
+/* 🔥 OPEN NSRP BY DEFAULT (stable) */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    if (cards.length > 0) {
+      openCard(cards[0]); // NSRP
+    }
+  }, 150);
+});
+
+/* keep height correct on resize */
+window.addEventListener('resize', () => {
+  const open = document.querySelector('.form-card.open');
+  if (open) setBodyHeight(open);
+});
+
+/* fix for images loading */
+document.querySelectorAll('.form-image').forEach(img => {
+  if (!img.complete) {
+    img.addEventListener('load', () => {
+      const open = document.querySelector('.form-card.open');
+      if (open) setBodyHeight(open);
+    });
+  }
+});
 
 /* IMAGE MODAL */
 const imageModal = document.getElementById('imageModal');
@@ -134,3 +147,7 @@ if (imageModal) {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeImageViewer();
 });
+
+document.querySelector('.forms-progress-box h1').textContent = percent + '%';
+document.querySelector('.forms-progress-box .completed h2').textContent = `${completed} / ${total}`;
+document.querySelector('.forms-progress-box .progress-fill').style.width = percent + '%';
