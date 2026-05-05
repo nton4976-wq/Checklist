@@ -1,59 +1,36 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Clearance Hub</title>
-
-  <link rel="stylesheet" href="style.css"/>
-
-  <!-- Remix Icons -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- HOME PAGE -->
+  <!-- HOME -->
   <main class="screen active" id="homeScreen">
-
-    <!-- Topbar -->
     <header class="topbar">
       <div class="brand">
-        <div class="brand-icon">
-          <i class="ri-links-line"></i>
-        </div>
-
+        <div class="brand-icon"><i class="ri-links-line"></i></div>
         <div>
           <span class="brand-small">CLEARANCE HUB</span>
           <h3>Homepage</h3>
         </div>
       </div>
-
-      <button class="notif-btn">
-        <i class="ri-notification-3-line"></i>
-      </button>
+      <button class="notif-btn"><i class="ri-notification-3-line"></i></button>
     </header>
 
-    <!-- Hero Card -->
     <section class="hero-card">
-
       <div class="hero-user">
-        <div class="avatar">
-          <i class="ri-user-3-fill"></i>
-        </div>
-
+        <div class="avatar"><i class="ri-user-3-fill"></i></div>
         <div class="hero-info">
           <p>Hi there 👋</p>
           <h2>Mark Anthony Caitor</h2>
           <span>Class of 2026 · BS Computer Science</span>
         </div>
-
-        <button class="doc-btn">
-          <i class="ri-file-list-3-line"></i>
-        </button>
+        <button class="doc-btn"><i class="ri-file-list-3-line"></i></button>
       </div>
 
       <div class="progress-box">
@@ -62,316 +39,354 @@
             <span>OVERALL PROGRESS</span>
             <h1>65%</h1>
           </div>
-
           <div class="completed">
             <span>Completed</span>
             <h2>2 / 5</h2>
           </div>
         </div>
-
         <div class="progress-bar">
           <div class="progress-fill" style="width:65%"></div>
         </div>
       </div>
     </section>
 
-    <!-- Checklist -->
     <section class="checklist">
       <div class="section-title">
         <h2>Your clearance checklist</h2>
-        <p>
-          Finish these to proceed to
-          <strong>CARES Clearance Signing.</strong>
-        </p>
+        <p>Finish these to proceed to <strong>CARES Clearance Signing.</strong></p>
       </div>
 
-      <!-- DONE -->
-      <div class="task-card done">
-        <div class="status">
-          <i class="ri-checkbox-circle-line"></i>
-          <span>DONE</span>
-        </div>
-
+      <article class="task-card done">
+        <div class="status"><i class="ri-checkbox-circle-line"></i><span>DONE</span></div>
         <div class="task-content">
           <div>
             <h3>Complete Your Profile</h3>
             <p>Answer the Alumni Info Sheet</p>
           </div>
-
-          <button class="dark-btn">
-            Review
-            <i class="ri-arrow-right-line"></i>
-          </button>
+          <button class="dark-btn">Review <i class="ri-arrow-right-line"></i></button>
         </div>
+        <div class="task-bottom"><span>Profile completion</span><strong>100%</strong></div>
+        <div class="mini-progress"><div class="mini-fill green" style="width:100%"></div></div>
+      </article>
 
-        <div class="task-bottom">
-          <span>Profile Completion</span>
-          <strong>100%</strong>
-        </div>
-
-        <div class="mini-progress">
-          <div class="mini-fill green" style="width:100%"></div>
-        </div>
-      </div>
-
-      <!-- JOB SEMINAR -->
-      <div class="task-card blue">
-        <div class="status blue-text">
-          <i class="ri-file-list-3-line"></i>
-          <span>IN PROGRESS</span>
-        </div>
-
+      <article class="task-card blue">
+        <div class="status blue-text"><i class="ri-file-list-3-line"></i><span>IN PROGRESS</span></div>
         <div class="task-content">
           <div>
             <h3>Job Orientation Seminar</h3>
             <p>Attendance and Evaluation</p>
           </div>
-
-          <button class="dark-btn" id="openSeminar">
-            View
-            <i class="ri-arrow-right-line"></i>
-          </button>
+          <button class="dark-btn" id="openSeminarBtn">View <i class="ri-arrow-right-line"></i></button>
         </div>
+        <div class="task-bottom"><span>1 of 2 sessions</span><strong>50%</strong></div>
+        <div class="mini-progress"><div class="mini-fill blue-fill" style="width:50%"></div></div>
+      </article>
 
-        <div class="task-bottom">
-          <span>1 of 2 sessions</span>
-          <strong>50%</strong>
-        </div>
-
-        <div class="mini-progress">
-          <div class="mini-fill blue-fill" style="width:50%"></div>
-        </div>
-      </div>
-
-      <!-- UPCOMING -->
-      <div class="task-card orange">
-        <div class="status orange-text">
-          <i class="ri-time-line"></i>
-          <span>UPCOMING</span>
-        </div>
-
+      <article class="task-card orange">
+        <div class="status orange-text"><i class="ri-time-line"></i><span>UPCOMING</span></div>
         <div class="task-content">
           <div>
             <h3>Labor Education Seminar</h3>
             <p>Attendance and Evaluation</p>
           </div>
-
-          <button class="light-btn">
-            View
-          </button>
+          <button class="light-btn">View</button>
         </div>
+        <div class="task-bottom"><span>Scheduled soon</span><strong>8%</strong></div>
+        <div class="mini-progress"><div class="mini-fill orange-fill" style="width:8%"></div></div>
+      </article>
 
-        <div class="task-bottom">
-          <span>Scheduled soon</span>
-          <strong>8%</strong>
-        </div>
-
-        <div class="mini-progress">
-          <div class="mini-fill orange-fill" style="width:8%"></div>
-        </div>
-      </div>
-
-      <!-- PRINTED FORMS -->
-      <div class="task-card blue">
-        <div class="status blue-text">
-          <i class="ri-file-list-3-line"></i>
-          <span>IN PROGRESS</span>
-        </div>
-
+      <article class="task-card blue">
+        <div class="status blue-text"><i class="ri-file-list-3-line"></i><span>IN PROGRESS</span></div>
         <div class="task-content">
           <div>
             <h3>Printed Forms</h3>
             <p>NSRP, Data Privacy, Waiver</p>
           </div>
-
-          <button class="dark-btn">
-            View
-            <i class="ri-arrow-right-line"></i>
-          </button>
+          <button class="dark-btn" id="openPrintedFormsBtn">View <i class="ri-arrow-right-line"></i></button>
         </div>
+        <div class="task-bottom"><span>2 of 3 forms</span><strong>66%</strong></div>
+        <div class="mini-progress"><div class="mini-fill blue-fill" style="width:66%"></div></div>
+      </article>
 
-        <div class="task-bottom">
-          <span>2 of 3 forms</span>
-          <strong>66%</strong>
-        </div>
-
-        <div class="mini-progress">
-          <div class="mini-fill blue-fill" style="width:66%"></div>
-        </div>
-      </div>
-
-      <!-- ALUMNI -->
-      <div class="task-card done">
-        <div class="status">
-          <i class="ri-checkbox-circle-line"></i>
-          <span>DONE</span>
-        </div>
-
+      <article class="task-card done">
+        <div class="status"><i class="ri-checkbox-circle-line"></i><span>DONE</span></div>
         <div class="task-content">
           <div>
             <h3>Alumni Fee</h3>
             <p>Verify or pay at Cashiering Office</p>
           </div>
-
-          <button class="dark-btn">
-            Receipt
-            <i class="ri-arrow-right-line"></i>
-          </button>
+          <button class="dark-btn">Receipt <i class="ri-arrow-right-line"></i></button>
         </div>
-
-        <div class="task-bottom">
-          <span>Payment confirmed</span>
-          <strong>100%</strong>
-        </div>
-
-        <div class="mini-progress">
-          <div class="mini-fill green" style="width:100%"></div>
-        </div>
-      </div>
-
+        <div class="task-bottom"><span>Payment confirmed</span><strong>100%</strong></div>
+        <div class="mini-progress"><div class="mini-fill green" style="width:100%"></div></div>
+      </article>
     </section>
   </main>
 
-  <!-- SEMINAR PAGE -->
+  <!-- SEMINAR -->
   <main class="screen" id="seminarScreen">
-
-    <!-- Top -->
     <header class="seminar-topbar">
-      <button class="back-btn" id="backBtn">
-        <i class="ri-arrow-left-s-line"></i>
-      </button>
-
+      <button class="back-btn" data-go="home"><i class="ri-arrow-left-s-line"></i></button>
       <div>
         <span class="brand-small">CLEARANCE HUB · JOBS</span>
         <h3>Job Orientation Seminar</h3>
       </div>
     </header>
 
-    <!-- Seminar Hero -->
     <section class="seminar-hero">
-
       <div class="hero-tags">
         <span>AY 2024-2025</span>
         <span>CARES</span>
       </div>
-
       <h1>Job Orientation & Placement Seminar</h1>
-
-      <p>
-        Beyond the Walls: Launching Your Career with Skills &
-        Confidence
-      </p>
-
+      <p>Beyond the Walls: Launching Your Career with Skills & Confidence</p>
       <div class="video-box">
-        <div class="play-btn">
-          <i class="ri-play-fill"></i>
-        </div>
-
+        <div class="play-btn"><i class="ri-play-fill"></i></div>
         <small>Watch the seminar replay</small>
       </div>
-
       <div class="seminar-progress">
         <div class="seminar-progress-top">
           <span>SEMINAR PROGRESS</span>
           <strong>2/3 done</strong>
         </div>
-
-        <div class="progress-bar">
-          <div class="progress-fill" style="width:66%"></div>
-        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:66%"></div></div>
       </div>
     </section>
 
-    <!-- Description -->
     <section class="info-section">
       <h3>Description</h3>
-
       <div class="white-card">
         <p><strong>Job Orientation & Job Placement Seminar</strong></p>
-
-        <p>
-          <strong>Theme:</strong> Beyond the Walls — Launching Your
-          Career with Skills & Confidence
-        </p>
-
-        <p>
-          Are you ready to step into the professional world? Don’t
-          miss out on this opportunity to gain the skills you need
-          for your career launch.
-        </p>
-
-        <p>
-          <strong>Crafting a Stellar Resume & Cover Letter with AI
-          Tools</strong>
-        </p>
-
-        <p>
-          Build interview confidence with AI and learn modern career
-          preparation techniques.
-        </p>
+        <p><strong>Theme:</strong> Beyond the Walls — Launching Your Career with Skills & Confidence</p>
+        <p>Learn resume writing, interview confidence, and practical career preparation strategies for students entering the professional world.</p>
+        <p><strong>Focus:</strong> AI-assisted resume and cover letter preparation, interview readiness, and job placement support.</p>
       </div>
     </section>
 
-    <!-- Requirements -->
     <section class="info-section">
       <h3>Requirements</h3>
 
       <div class="requirement-card missed">
         <div class="req-left">
-          <div class="req-icon red">
-            <i class="ri-close-circle-line"></i>
-          </div>
-
+          <div class="req-icon red"><i class="ri-close-circle-line"></i></div>
           <div>
             <h4>ATTENDANCE</h4>
             <p>Tap to reschedule</p>
           </div>
         </div>
-
         <span class="badge red-badge">MISSED</span>
       </div>
 
       <div class="requirement-card done-req">
         <div class="req-left">
-          <div class="req-icon green">
-            <i class="ri-checkbox-circle-line"></i>
-          </div>
-
+          <div class="req-icon green"><i class="ri-checkbox-circle-line"></i></div>
           <div>
             <h4>MOCK-UP INTERVIEW</h4>
             <p>Completed</p>
           </div>
         </div>
-
         <span class="badge green-badge">DONE</span>
       </div>
 
       <div class="requirement-card done-req">
         <div class="req-left">
-          <div class="req-icon green">
-            <i class="ri-checkbox-circle-line"></i>
-          </div>
-
+          <div class="req-icon green"><i class="ri-checkbox-circle-line"></i></div>
           <div>
             <h4>EVALUATION</h4>
             <p>Completed</p>
           </div>
         </div>
-
         <span class="badge green-badge">DONE</span>
       </div>
 
-      <button class="certificate-btn">
-        <i class="ri-award-line"></i>
-        Request Certificate
-      </button>
+      <button class="certificate-btn"><i class="ri-award-line"></i> Request Certificate</button>
+      <p class="bottom-note">Complete all requirements to unlock your certificate.</p>
+    </section>
+  </main>
 
-      <p class="bottom-note">
-        Complete all requirements to unlock your certificate.
-      </p>
+  <!-- PRINTED FORMS -->
+  <main class="screen" id="printedFormsScreen">
+    <header class="seminar-topbar">
+      <button class="back-btn" data-go="home"><i class="ri-arrow-left-s-line"></i></button>
+      <div>
+        <span class="brand-small">CLEARANCE HUB · JOBS</span>
+        <h3>Printed Forms</h3>
+      </div>
+    </header>
+
+    <section class="forms-hero-clean">
+      <h1>Printed Forms</h1>
+      <p>Complete all required documents to proceed with clearance.</p>
+
+      <div class="forms-progress-clean">
+        <span>Progress</span>
+        <strong>3 / 3 Completed</strong>
+      </div>
     </section>
 
+    <section class="forms-list-clean">
+      <article class="form-card open" data-accordion>
+        <button class="form-header" type="button">
+          <div class="form-text">
+            <h3>NSRP Forms</h3>
+            <p>National Skills Registration</p>
+          </div>
+          <div class="check-icon">
+            <i class="ri-check-line"></i>
+          </div>
+        </button>
+
+        <div class="form-expand">
+          <div class="form-flow">
+            <button
+              class="form-image-btn"
+              type="button"
+              data-expand-image="assets/nsrp-form.png"
+              aria-label="Expand NSRP form image"
+            >
+              <img
+                src="form.jpg"
+                alt="NSRP form preview"
+                class="form-image"
+              />
+              <span class="expand-hint">
+                <i class="ri-zoom-in-line"></i> Tap to expand
+              </span>
+            </button>
+
+            <div class="form-description">
+              <p>
+                The National Skills Registration Program (NSRP) is a program initiated by the Department of Labor and Employment (DOLE) that aims to create and maintain a nationwide database of skilled workers, jobseekers, and employers through the Skills Registry System (SRS) and the PESO Employment Information System (PEIS).
+              </p>
+
+              <p>
+                It serves as an employment facilitation program that helps connect qualified individuals with job opportunities based on their skills, qualifications, and work experience.
+              </p>
+
+              <p>
+                The NSRP supports Public Employment Service Offices (PESOs) in matching jobseekers with employers, while also helping the government identify workforce needs and develop appropriate employment and training programs nationwide.
+              </p>
+            </div>
+          </div>
+
+          <div class="status-line">
+            <span>Status:</span>
+            <strong>Submitted</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="form-card" data-accordion>
+        <button class="form-header" type="button">
+          <div class="form-text">
+            <h3>Waiver Forms</h3>
+            <p>Seminar Agreement</p>
+          </div>
+          <div class="check-icon">
+            <i class="ri-check-line"></i>
+          </div>
+        </button>
+
+        <div class="form-expand">
+          <div class="form-flow">
+            <button
+              class="form-image-btn"
+              type="button"
+              data-expand-image="form.jpg"
+              aria-label="Expand Waiver form image"
+            >
+              <img
+                src="form.jpg"
+                alt="Waiver form preview"
+                class="form-image"
+              />
+              <span class="expand-hint">
+                <i class="ri-zoom-in-line"></i> Tap to expand
+              </span>
+            </button>
+
+            <div class="form-description">
+              <p>
+                The National Skills Registration Program (NSRP) is a program initiated by the Department of Labor and Employment (DOLE) that aims to create and maintain a nationwide database of skilled workers, jobseekers, and employers through the Skills Registry System (SRS) and the PESO Employment Information System (PEIS).
+              </p>
+
+              <p>
+                It serves as an employment facilitation program that helps connect qualified individuals with job opportunities based on their skills, qualifications, and work experience.
+              </p>
+
+              <p>
+                The NSRP supports Public Employment Service Offices (PESOs) in matching jobseekers with employers, while also helping the government identify workforce needs and develop appropriate employment and training programs nationwide.
+              </p>
+            </div>
+          </div>
+
+          <div class="status-line">
+            <span>Status:</span>
+            <strong>Submitted</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="form-card" data-accordion>
+        <button class="form-header" type="button">
+          <div class="form-text">
+            <h3>Data Privacy Forms</h3>
+            <p>Consent & Authorization</p>
+          </div>
+          <div class="check-icon">
+            <i class="ri-check-line"></i>
+          </div>
+        </button>
+
+        <div class="form-expand">
+          <div class="form-flow">
+            <button
+              class="form-image-btn"
+              type="button"
+              data-expand-image="assets/nsrp-form.png"
+              aria-label="Expand Data Privacy form image"
+            >
+              <img
+                src="assets/nsrp-form.png"
+                alt="Data Privacy form preview"
+                class="form-image"
+              />
+              <span class="expand-hint">
+                <i class="ri-zoom-in-line"></i> Tap to expand
+              </span>
+            </button>
+
+            <div class="form-description">
+              <p>
+                The National Skills Registration Program (NSRP) is a program initiated by the Department of Labor and Employment (DOLE) that aims to create and maintain a nationwide database of skilled workers, jobseekers, and employers through the Skills Registry System (SRS) and the PESO Employment Information System (PEIS).
+              </p>
+
+              <p>
+                It serves as an employment facilitation program that helps connect qualified individuals with job opportunities based on their skills, qualifications, and work experience.
+              </p>
+
+              <p>
+                The NSRP supports Public Employment Service Offices (PESOs) in matching jobseekers with employers, while also helping the government identify workforce needs and develop appropriate employment and training programs nationwide.
+              </p>
+            </div>
+          </div>
+
+          <div class="status-line">
+            <span>Status:</span>
+            <strong>Submitted</strong>
+          </div>
+        </div>
+      </article>
+    </section>
   </main>
+
+  <!-- IMAGE MODAL -->
+  <div class="image-modal" id="imageModal" aria-hidden="true">
+    <button class="image-modal-close" id="closeImageModal" type="button" aria-label="Close image">
+      <i class="ri-close-line"></i>
+    </button>
+    <img id="modalImage" alt="Expanded form preview" />
+  </div>
 
   <script src="script.js"></script>
 </body>
