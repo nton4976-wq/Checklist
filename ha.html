@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yearbook Claim Demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+:root{
+  --bg:#eef1f4;
+  --card:#ffffff;
+  --primary:#0c9b8a;
+  --primary-dark:#08796d;
+  --primary-light:#22b7a3;
+  --navy:#061736;
+
+  --text:#071426;
+  --muted:#718096;
+
+  --success:#22c55e;
+  --warning:#f59e0b;
+  --info:#3b82f6;
+
+  --border:#e6ebf1;
+
+  --shadow:
+    0 10px 25px rgba(0,0,0,.06);
+
+  --radius:28px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family: Inter, system-ui, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.app{
+  width:min(100%, 430px);
+  margin:auto;
+  min-height:100vh;
+  padding:18px 14px 30px;
+}
+
+/* TOPBAR */
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.brand{
+  display:flex;
+  flex-direction:column;
+}
+
+.brand small{
+  font-size:10px;
+  letter-spacing:4px;
+  font-weight:700;
+  color:#8c98a8;
+}
+
+.brand h1{
+  margin:2px 0 0;
+  font-size:22px;
+  font-weight:800;
+}
+
+.top-icon{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:var(--shadow);
+  font-size:20px;
+}
+
+/* HERO CARD */
+
+.hero-card{
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary) 0%,
+      var(--primary-light) 100%
+    );
+
+  border-radius:32px;
+  padding:18px;
+  color:white;
+  box-shadow:
+    0 18px 35px rgba(10,140,120,.25);
+
+  margin-bottom:20px;
+}
+
+.hero-card::before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  background:rgba(255,255,255,.06);
+  border-radius:50%;
+  top:-70px;
+  right:-50px;
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  background:rgba(255,255,255,.12);
+  border-radius:18px;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:14px;
+  backdrop-filter:blur(10px);
+}
+
+.hero-card h2{
+  margin:0 0 8px;
+  font-size:31px;
+  line-height:1.1;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.hero-card p{
+  margin:0;
+  color:rgba(255,255,255,.85);
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* INPUTS */
+
+.field-label{
+  display:block;
+  margin:18px 0 8px;
+  font-size:13px;
+  font-weight:700;
+  color:white;
+}
+
+.field{
+  width:100%;
+  height:54px;
+  border:none;
+  border-radius:18px;
+  padding:0 18px;
+  font-size:15px;
+  background:rgba(255,255,255,.16);
+  color:white;
+  outline:none;
+  backdrop-filter:blur(10px);
+}
+
+.field::placeholder{
+  color:rgba(255,255,255,.7);
+}
+
+.field:focus{
+  background:rgba(255,255,255,.22);
+}
+
+/* BUTTONS */
+
+.actions{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+
+.btn{
+  border:none;
+  border-radius:18px;
+  height:52px;
+  padding:0 18px;
+  font-weight:800;
+  font-size:14px;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.btn:active{
+  transform:scale(.97);
+}
+
+.btn.primary{
+  flex:1;
+  background:var(--navy);
+  color:white;
+}
+
+.btn.ghost{
+  width:110px;
+  background:rgba(255,255,255,.18);
+  color:white;
+  backdrop-filter:blur(10px);
+}
+
+/* RESULTS CARD */
+
+.results-card{
+  background:transparent;
+}
+
+.section-title{
+  margin-bottom:14px;
+}
+
+.section-title h3{
+  margin:0;
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.section-title p{
+  margin:4px 0 0;
+  color:#667085;
+  font-size:14px;
+}
+
+.status-pill{
+  display:inline-flex;
+  margin-top:10px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:#dff7f1;
+  color:var(--primary-dark);
+  font-size:13px;
+  font-weight:800;
+}
+
+/* RESULT BOX */
+
+.table-wrap{
+  background:white;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+thead{
+  background:#f6f8fb;
+}
+
+thead th{
+  text-align:left;
+  padding:18px;
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:#7a8797;
+}
+
+tbody td{
+  padding:18px;
+  border-top:1px solid #eef2f6;
+}
+
+.full-name{
+  font-size:15px;
+  font-weight:800;
+}
+
+/* VIEW BUTTON */
+
+.view-btn{
+  border:none;
+  background:var(--navy);
+  color:white;
+  height:42px;
+  padding:0 18px;
+  border-radius:999px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* STATES */
+
+.empty-state,
+.hint-state{
+  background:white;
+  border-radius:28px;
+  padding:22px;
+  color:#667085;
+  line-height:1.7;
+  box-shadow:var(--shadow);
+}
+
+/* MODAL */
+
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  z-index:999;
+  backdrop-filter:blur(4px);
+}
+
+.modal-overlay.open{
+  display:flex;
+}
+
+.modal{
+  width:min(420px,100%);
+  background:white;
+  border-radius:32px;
+  padding:24px;
+  position:relative;
+  animation:pop .25s ease;
+}
+
+@keyframes pop{
+  from{
+    transform:scale(.92);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.modal-close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:50%;
+  background:#f3f5f8;
+  cursor:pointer;
+}
+
+.modal h4{
+  margin:0 0 8px;
+  font-size:24px;
+  font-weight:900;
+}
+
+.modal p{
+  color:#667085;
+  line-height:1.7;
+}
+
+.modal-footer{
+  margin-top:18px;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.ok-btn{
+  border:none;
+  background:var(--primary);
+  color:white;
+  height:46px;
+  padding:0 22px;
+  border-radius:16px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+  .hero-card h2{
+    font-size:26px;
+  }
+
+  .section-title h3{
+    font-size:25px;
+  }
+
+  .actions{
+    flex-direction:column;
+  }
+
+  .btn.ghost{
+    width:100%;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <small>CARES CLEARANCE REQUIREMENT CHECKER</small>
+      </div>
+    </header>
+
+    <section class="hero-card">
+      <div class="pill"><i class="ri-search-2-line"></i> Search Graduating Students</div>
+      <h2>Find a record by name</h2>
+      <p>Type the first name and last name, then search. For this demo, only <strong>Mark Anthony Caitor</strong> will return a record.</p>
+
+      <label class="field-label" for="firstName">First Name</label>
+      <input id="firstName" class="field" type="text" placeholder="Mark Anthony" autocomplete="off" />
+
+      <label class="field-label" for="lastName">Last Name</label>
+      <input id="lastName" class="field" type="text" placeholder="Caitor" autocomplete="off" />
+
+      <div class="actions">
+        <button class="btn primary" id="searchBtn" type="button">Search Alumni</button>
+        <button class="btn ghost" id="clearBtn" type="button">Clear</button>
+      </div>
+    </section>
+
+    <section class="results-card">
+      <div class="section-title">
+        <div>
+          <h3>Search Results</h3>
+          <p>Shown only when a matching record is found.</p>
+        </div>
+        <div id="resultCount" class="status-pill">0 record</div>
+      </div>
+
+      <div id="resultsArea" class="hint-state">
+        Enter a first name and last name, then tap <strong>Search Alumni</strong>.
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-overlay" id="infoModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+      <button class="modal-close" id="closeModalBtn" type="button" aria-label="Close modal">
+        <i class="ri-close-line"></i>
+      </button>
+      <h4 id="infoTitle">Demo View</h4>
+      <p id="infoText">This is a demo button for the matching record.</p>
+      <div class="modal-footer">
+        <button class="ok-btn" id="okModalBtn" type="button">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const firstNameEl = document.getElementById('firstName');
+    const lastNameEl = document.getElementById('lastName');
+    const searchBtn = document.getElementById('searchBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const demoInfoBtn = document.getElementById('demoInfoBtn');
+    const resultsArea = document.getElementById('resultsArea');
+    const resultCount = document.getElementById('resultCount');
+
+    const infoModal = document.getElementById('infoModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const okModalBtn = document.getElementById('okModalBtn');
+    const infoText = document.getElementById('infoText');
+
+    const demoRecord = {
+      firstName: 'mark anthony',
+      lastName: 'caitor',
+      fullName: 'Caitor, Mark Anthony'
+    };
+
+    function normalize(value) {
+      return value.trim().replace(/\s+/g, ' ').toLowerCase();
+    }
+
+    function openModal(message) {
+      infoText.textContent = message;
+      infoModal.classList.add('open');
+      infoModal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      infoModal.classList.remove('open');
+      infoModal.setAttribute('aria-hidden', 'true');
+    }
+
+    function renderNoResult(message) {
+      resultsArea.innerHTML = `<div class="empty-state">${message}</div>`;
+      resultCount.textContent = '0 record';
+    }
+
+    function renderResult() {
+      resultsArea.innerHTML = `
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Full Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="full-name">${demoRecord.fullName}</td>
+                <td>
+                  <button class="view-btn" id="viewDemoBtn" type="button">View</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      `;
+      resultCount.textContent = '1 record';
+
+        document.getElementById('viewDemoBtn').addEventListener('click', () => {
+        window.location.href = "index.html";
+        })};
+
+    function searchAlumni() {
+      const first = normalize(firstNameEl.value);
+      const last = normalize(lastNameEl.value);
+
+      if (!first || !last) {
+        renderNoResult('Please enter both first name and last name.');
+        return;
+      }
+
+      const matchFirst = first === demoRecord.firstName;
+      const matchLast = last === demoRecord.lastName;
+
+      if (matchFirst && matchLast) {
+        renderResult();
+      } else {
+        renderNoResult('No record found for the selected name.');
+      }
+    }
+
+    searchBtn.addEventListener('click', searchAlumni);
+
+    clearBtn.addEventListener('click', () => {
+      firstNameEl.value = '';
+      lastNameEl.value = '';
+      resultsArea.innerHTML = 'Enter a first name and last name, then tap <strong>Search Alumni</strong>.';
+      resultCount.textContent = '0 record';
+      firstNameEl.focus();
+    });
+
+    demoInfoBtn.addEventListener('click', () => {
+      openModal('Demo search works only for the exact record: Mark Anthony Caitor.');
+    });
+
+    closeModalBtn.addEventListener('click', closeModal);
+    okModalBtn.addEventListener('click', closeModal);
+    infoModal.addEventListener('click', (e) => {
+      if (e.target === infoModal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Enter' && document.activeElement !== searchBtn) {
+        // let Enter from inputs trigger search
+        if (document.activeElement === firstNameEl || document.activeElement === lastNameEl) {
+          searchAlumni();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
