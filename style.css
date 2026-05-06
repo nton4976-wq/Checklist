@@ -596,11 +596,49 @@ button{
   margin-bottom:12px;
 }
 
-.forms-progress-clean{
+.forms-progress-box{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;
+  padding:16px;
+}
+
+.forms-progress-top{
   display:flex;
   justify-content:space-between;
-  font-size:11px;
-  font-weight:600;
+  align-items:flex-start;
+  margin-bottom:12px;
+}
+
+.forms-progress-top span{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1px;
+  opacity:.85;
+}
+
+.forms-progress-top h1{
+  font-size:22px;
+  line-height:1;
+  font-weight:800;
+  margin-top:4px;
+}
+
+.forms-progress-box .completed{
+  text-align:right;
+}
+
+.forms-progress-box .completed span{
+  font-size:10px;
+  font-weight:700;
+  opacity:.9;
+}
+
+.forms-progress-box .completed h2{
+  font-size:18px;
+  line-height:1;
+  font-weight:800;
+  margin-top:4px;
 }
 
 .forms-note{
@@ -699,7 +737,6 @@ button{
   padding:10px 18px 16px;
 }
 
-/* FLOW LAYOUT */
 .form-flow{
   display:block;
 }
@@ -818,6 +855,160 @@ button{
   cursor:pointer;
   box-shadow:0 10px 24px rgba(0,0,0,.22);
   z-index:10000;
+}
+
+/* RECEIPT MODAL */
+.receipt-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(3,7,18,.62);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  z-index:10010;
+}
+
+.receipt-modal.open{
+  display:flex;
+}
+
+.receipt-card{
+  width:min(390px, 100%);
+  background:#fff;
+  border-radius:28px;
+  padding:18px 18px 16px;
+  box-shadow:0 24px 70px rgba(0,0,0,.28);
+  position:relative;
+  border:1px solid rgba(15,118,110,.10);
+}
+
+.receipt-close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:34px;
+  height:34px;
+  border:none;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  color:#111827;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.receipt-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:10px;
+  padding-right:34px;
+}
+
+.receipt-avatar{
+  width:72px;
+  height:72px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#d9f1ec,#eef8f6);
+  color:#0f8f82;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:34px;
+  flex-shrink:0;
+}
+
+.receipt-head-text p{
+  font-size:14px;
+  color:#8b95a7;
+  font-weight:600;
+  margin-bottom:2px;
+}
+
+.receipt-head-text h3{
+  font-size:18px;
+  line-height:1.15;
+  color:#374151;
+  font-weight:700;
+}
+
+.receipt-subtitle{
+  font-size:12px;
+  line-height:1.6;
+  color:#9aa3af;
+  margin-bottom:16px;
+}
+
+.receipt-instruction{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.2px;
+  color:#111827;
+  margin-bottom:12px;
+}
+
+.receipt-digits{
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  gap:8px;
+  margin-bottom:14px;
+}
+
+.receipt-digit{
+  width:100%;
+  height:48px;
+  border-radius:12px;
+  border:1.5px solid #d4dae3;
+  background:#fff;
+  text-align:center;
+  font-size:18px;
+  font-weight:800;
+  color:#111827;
+  outline:none;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.6);
+}
+
+.receipt-digit:focus{
+  border-color:#0f8f82;
+  box-shadow:0 0 0 3px rgba(15,143,130,.12);
+}
+
+.receipt-verify{
+  width:100%;
+  height:42px;
+  border:none;
+  border-radius:10px;
+  background:#0f8f82;
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.6px;
+  cursor:pointer;
+  margin-bottom:10px;
+  transition:transform .12s ease, opacity .12s ease, background .12s ease;
+}
+
+.receipt-verify:disabled{
+  background:#9ed8d0;
+  cursor:not-allowed;
+  opacity:.95;
+}
+
+.receipt-verify.pending{
+  background:#14866f;
+  cursor:not-allowed;
+}
+
+.receipt-status{
+  margin-top:10px;
+  font-size:12px;
+  color:#0f8f82;
+  text-align:center;
+  font-weight:700;
 }
 
 /* RESPONSIVE TUNING */
@@ -957,6 +1148,29 @@ button{
     text-align:center;
     padding:6px 12px;
   }
+
+  .forms-progress-box{
+    padding:14px;
+  }
+
+  .receipt-card{
+    padding:16px 14px 14px;
+  }
+
+  .receipt-avatar{
+    width:64px;
+    height:64px;
+    font-size:30px;
+  }
+
+  .receipt-head-text h3{
+    font-size:16px;
+  }
+
+  .receipt-digit{
+    height:44px;
+    font-size:16px;
+  }
 }
 
 @media (max-width:340px){
@@ -1016,62 +1230,201 @@ button{
     width:100%;
     margin:0 0 12px 0;
   }
+
+  .receipt-digits{
+    gap:6px;
+  }
+
+  .receipt-digit{
+    height:42px;
+    border-radius:10px;
+  }
 }
 
-.form-expand {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
+
+.check-icon.danger{
+  background:#fee2e2;
+  color:#ef4444;
 }
 
-.form-card.open .form-expand {
-  padding: 10px 18px 16px;
+.status-warning{
+  background:#fee2e2;
+  color:#b91c1c;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:700;
 }
 
-.forms-progress-box{
-  background: rgba(255,255,255,.10);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 22px;
-  padding: 16px;
-  margin-top: 10px;
+.clickable-card{
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease;
 }
 
-.forms-progress-top{
+.clickable-card:active{
+  transform:scale(0.98);
+}
+
+.clickable-req{
+  cursor:pointer;
+}
+
+.video-launch-btn{
+  width:100%;
+  border:none;
+  background:transparent;
+  color:#fff;
   display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  margin-bottom:12px;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  cursor:pointer;
+  padding:0;
 }
 
-.forms-progress-top span{
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1px;
-  opacity:.85;
-  color:#fff;
+.simple-modal,
+.video-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(3,7,18,.66);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  z-index:10020;
 }
 
-.forms-progress-top h1{
-  font-size:22px;
-  font-weight:800;
-  color:#fff;
-  margin-top:4px;
+.simple-modal.open,
+.video-modal.open{
+  display:flex;
 }
 
-.forms-progress-box .completed{
-  text-align:right;
+.simple-modal-card,
+.video-modal-card{
+  width:min(420px, 100%);
+  background:#fff;
+  border-radius:26px;
+  padding:18px;
+  box-shadow:0 24px 70px rgba(0,0,0,.28);
+  position:relative;
 }
 
-.forms-progress-box .completed span{
-  font-size:10px;
-  font-weight:700;
-  color:#fff;
-  opacity:.9;
+.simple-modal-close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:34px;
+  height:34px;
+  border:none;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  font-size:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
 }
 
-.forms-progress-box .completed h2{
+.simple-modal-title{
+  padding-right:36px;
+  margin-bottom:14px;
+}
+
+.simple-modal-title h3{
   font-size:18px;
   font-weight:800;
+  color:#111827;
+  margin-bottom:4px;
+}
+
+.simple-modal-title p{
+  font-size:12px;
+  line-height:1.5;
+  color:#6b7280;
+}
+
+.password-inputs{
+  display:grid;
+  grid-template-columns:repeat(8, 1fr);
+  gap:8px;
+  margin-bottom:14px;
+}
+
+.password-digit{
+  width:100%;
+  height:46px;
+  border-radius:12px;
+  border:1.5px solid #d6dde7;
+  text-align:center;
+  font-size:18px;
+  font-weight:800;
+  color:#111827;
+  outline:none;
+}
+
+.password-digit:focus{
+  border-color:#0f8f82;
+  box-shadow:0 0 0 3px rgba(15,143,130,.12);
+}
+
+.simple-modal-action{
+  width:100%;
+  height:44px;
+  border:none;
+  border-radius:12px;
+  background:#0f8f82;
   color:#fff;
-  margin-top:4px;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.simple-modal-action:disabled{
+  background:#9ed8d0;
+  cursor:not-allowed;
+}
+
+.simple-modal-message{
+  margin-top:10px;
+  font-size:12px;
+  color:#0f8f82;
+  text-align:center;
+  font-weight:700;
+}
+
+.video-modal-card{
+  width:min(92vw, 980px);
+}
+
+.video-modal-frame{
+  width:100%;
+  aspect-ratio:16 / 9;
+  border-radius:18px;
+  overflow:hidden;
+  background:#000;
+}
+
+.video-modal-frame iframe{
+  width:100%;
+  height:100%;
+  border:none;
+  display:block;
+}
+
+@media (max-width:390px){
+  .password-digit{
+    height:42px;
+    font-size:16px;
+  }
+
+  .simple-modal-card{
+    padding:16px;
+    border-radius:22px;
+  }
+
+  .video-modal-card{
+    padding:14px;
+  }
 }
