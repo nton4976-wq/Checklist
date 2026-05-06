@@ -63,7 +63,9 @@
             <h3>Complete Your Profile</h3>
             <p>Answer the Alumni Info Sheet</p>
           </div>
-          <button class="dark-btn" type="button">Review <i class="ri-arrow-right-line"></i></button>
+          <button class="dark-btn" type="button" id="profileBtn">
+          Answer <i class="ri-arrow-right-line"></i>
+          </button>
         </div>
         <div class="task-bottom"><span>Profile completion</span><strong>100%</strong></div>
         <div class="mini-progress"><div class="mini-fill green" style="width:100%"></div></div>
@@ -78,8 +80,8 @@
           </div>
           <button class="dark-btn" type="button" id="openSeminarBtn">View <i class="ri-arrow-right-line"></i></button>
         </div>
-        <div class="task-bottom"><span>1 of 2 sessions</span><strong>50%</strong></div>
-        <div class="mini-progress"><div class="mini-fill blue-fill" style="width:50%"></div></div>
+        <div class="task-bottom"><span>2 of 3 requirements</span><strong>70%</strong></div>
+        <div class="mini-progress"><div class="mini-fill blue-fill" style="width:70%"></div></div>
       </article>
 
       <article class="task-card orange">
@@ -104,8 +106,8 @@
           </div>
           <button class="dark-btn" type="button" id="openPrintedFormsBtn">View <i class="ri-arrow-right-line"></i></button>
         </div>
-        <div class="task-bottom"><span>2 of 3 forms</span><strong>66%</strong></div>
-        <div class="mini-progress"><div class="mini-fill blue-fill" style="width:66%"></div></div>
+        <div class="task-bottom"><span>2 of 3 forms</span><strong>70%</strong></div>
+        <div class="mini-progress"><div class="mini-fill blue-fill" style="width:70%"></div></div>
       </article>
 
       <article class="task-card done">
@@ -115,7 +117,7 @@
             <h3>Alumni Fee</h3>
             <p>Verify or pay at Cashiering Office</p>
           </div>
-          <button class="dark-btn" type="button">Receipt <i class="ri-arrow-right-line"></i></button>
+          <button class="dark-btn" type="button" id="openAlumniModalBtn">Receipt <i class="ri-arrow-right-line"></i></button>
         </div>
         <div class="task-bottom"><span>Payment confirmed</span><strong>100%</strong></div>
         <div class="mini-progress"><div class="mini-fill green" style="width:100%"></div></div>
@@ -124,85 +126,87 @@
   </main>
 
   <!-- SEMINAR -->
-  <main class="screen" id="seminarScreen">
-    <header class="seminar-topbar">
-      <button class="back-btn" type="button" data-go="home"><i class="ri-arrow-left-s-line"></i></button>
-      <div>
-        <span class="brand-small">CLEARANCE HUB</span>
-        <h3>Job Orientation Seminar</h3>
-      </div>
-    </header>
+<main class="screen" id="seminarScreen">
+  <header class="seminar-topbar">
+    <button class="back-btn" type="button" data-go="home"><i class="ri-arrow-left-s-line"></i></button>
+    <div>
+      <span class="brand-small">CLEARANCE HUB</span>
+      <h3>Job Orientation Seminar</h3>
+    </div>
+  </header>
 
-    <section class="seminar-hero">
-      <div class="hero-tags">
-        <span>AY 2024-2025</span>
-        <span>CARES</span>
+  <section class="seminar-hero">
+    <div class="hero-tags">
+      <span>AY 2024-2025</span>
+      <span>CARES</span>
+    </div>
+    <h1>Job Orientation & Placement Seminar</h1>
+    <p>Beyond the Walls: Launching Your Career with Skills & Confidence</p>
+
+    <button class="video-box video-launch-btn" id="openVideoPasswordBtn" type="button">
+      <div class="play-btn"><i class="ri-play-fill"></i></div>
+      <small>Watch the seminar replay</small>
+    </button>
+
+    <div class="seminar-progress">
+      <div class="seminar-progress-top">
+        <span>SEMINAR PROGRESS</span>
+        <strong>2/3 done</strong>
       </div>
-      <h1>Job Orientation & Placement Seminar</h1>
-      <p>Beyond the Walls: Launching Your Career with Skills & Confidence</p>
-      <div class="video-box">
-        <div class="play-btn"><i class="ri-play-fill"></i></div>
-        <small>Watch the seminar replay</small>
-      </div>
-      <div class="seminar-progress">
-        <div class="seminar-progress-top">
-          <span>SEMINAR PROGRESS</span>
-          <strong>2/3 done</strong>
+      <div class="progress-bar"><div class="progress-fill" style="width:66%"></div></div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h3>Description</h3>
+    <div class="white-card">
+      <p><strong>Job Orientation & Job Placement Seminar</strong></p>
+      <p><strong>Theme:</strong> Beyond the Walls — Launching Your Career with Skills & Confidence</p>
+      <p>Learn resume writing, interview confidence, and practical career preparation strategies for students entering the professional world.</p>
+      <p><strong>Focus:</strong> AI-assisted resume and cover letter preparation, interview readiness, and job placement support.</p>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h3>Requirements</h3>
+
+    <div class="requirement-card missed clickable-req" id="attendanceCard">
+      <div class="req-left">
+        <div class="req-icon red"><i class="ri-close-circle-line"></i></div>
+        <div>
+          <h4>ATTENDANCE</h4>
+          <p>Tap to reschedule</p>
         </div>
-        <div class="progress-bar"><div class="progress-fill" style="width:66%"></div></div>
       </div>
-    </section>
+      <span class="badge red-badge">MISSED</span>
+    </div>
 
-    <section class="info-section">
-      <h3>Description</h3>
-      <div class="white-card">
-        <p><strong>Job Orientation & Job Placement Seminar</strong></p>
-        <p><strong>Theme:</strong> Beyond the Walls — Launching Your Career with Skills & Confidence</p>
-        <p>Learn resume writing, interview confidence, and practical career preparation strategies for students entering the professional world.</p>
-        <p><strong>Focus:</strong> AI-assisted resume and cover letter preparation, interview readiness, and job placement support.</p>
-      </div>
-    </section>
-
-    <section class="info-section">
-      <h3>Requirements</h3>
-
-      <div class="requirement-card missed">
-        <div class="req-left">
-          <div class="req-icon red"><i class="ri-close-circle-line"></i></div>
-          <div>
-            <h4>ATTENDANCE</h4>
-            <p>Tap to reschedule</p>
-          </div>
+    <div class="requirement-card done-req clickable-req" id="mockupCard">
+      <div class="req-left">
+        <div class="req-icon green"><i class="ri-checkbox-circle-line"></i></div>
+        <div>
+          <h4>MOCK-UP INTERVIEW</h4>
+          <p>Completed</p>
         </div>
-        <span class="badge red-badge">MISSED</span>
       </div>
+      <span class="badge green-badge">DONE</span>
+    </div>
 
-      <div class="requirement-card done-req">
-        <div class="req-left">
-          <div class="req-icon green"><i class="ri-checkbox-circle-line"></i></div>
-          <div>
-            <h4>MOCK-UP INTERVIEW</h4>
-            <p>Completed</p>
-          </div>
+    <div class="requirement-card done-req clickable-req" id="evaluationCard">
+      <div class="req-left">
+        <div class="req-icon green"><i class="ri-checkbox-circle-line"></i></div>
+        <div>
+          <h4>EVALUATION</h4>
+          <p>Completed</p>
         </div>
-        <span class="badge green-badge">DONE</span>
       </div>
+      <span class="badge green-badge">DONE</span>
+    </div>
 
-      <div class="requirement-card done-req">
-        <div class="req-left">
-          <div class="req-icon green"><i class="ri-checkbox-circle-line"></i></div>
-          <div>
-            <h4>EVALUATION</h4>
-            <p>Completed</p>
-          </div>
-        </div>
-        <span class="badge green-badge">DONE</span>
-      </div>
-
-      <button class="certificate-btn" type="button"><i class="ri-award-line"></i> Request Certificate</button>
-      <p class="bottom-note">Complete all requirements to unlock your certificate.</p>
-    </section>
-  </main>
+    <button class="certificate-btn" type="button"><i class="ri-award-line"></i> Request Certificate</button>
+    <p class="bottom-note">Complete all requirements to unlock your certificate.</p>
+  </section>
+</main>
 
   <!-- PRINTED FORMS -->
   <main class="screen" id="printedFormsScreen">
@@ -218,23 +222,21 @@
       <h1>Printed Forms</h1>
       <p>Complete all required documents to proceed with clearance.</p>
 
-    <div class="forms-progress-box">
-      <div class="forms-progress-top">
-        <div>
-          <span>OVERALL PROGRESS</span>
-          <h1>100%</h1>
+      <div class="forms-progress-box">
+        <div class="forms-progress-top">
+          <div>
+            <span>OVERALL PROGRESS</span>
+            <h1>70%</h1>
+          </div>
+          <div class="completed">
+            <span>Incomplete</span>
+            <h2>2 / 3</h2>
+          </div>
         </div>
-
-        <div class="completed">
-          <span>Completed</span>
-          <h2>3 / 3</h2>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:70%"></div>
         </div>
       </div>
-
-      <div class="progress-bar">
-        <div class="progress-fill" style="width:100%"></div>
-      </div>
-    </div>
     </section>
 
     <section class="forms-note">
@@ -249,8 +251,8 @@
             <h3>NSRP Forms</h3>
             <p>National Skills Registration</p>
           </div>
-          <div class="check-icon">
-            <i class="ri-check-line"></i>
+          <div class="check-icon danger">
+            <i class="ri-close-line"></i>
           </div>
         </button>
 
@@ -274,11 +276,11 @@
             </div>
           </div>
 
-          <div class="status-line">
-            <span>Status:</span>
-            <strong>Submitted</strong>
-          </div>
+        <div class="status-line">
+          <span>Status:</span>
+          <strong class="status-warning">Please request a copy at CARES office</strong>
         </div>
+                </div>
       </article>
 
       <article class="form-card" data-accordion>
@@ -366,6 +368,107 @@
     </button>
     <img id="modalImage" alt="Expanded form preview" />
   </div>
+
+  <!-- ALUMNI FEE RECEIPT MODAL -->
+<div class="receipt-modal" id="receiptModal" aria-hidden="true">
+  <div class="receipt-card" role="dialog" aria-modal="true" aria-labelledby="receiptModalTitle">
+    <button class="receipt-close" id="closeReceiptModal" type="button" aria-label="Close receipt modal">
+      <i class="ri-close-line"></i>
+    </button>
+
+    <div class="receipt-head">
+      <div class="receipt-avatar"><i class="ri-chat-3-line"></i></div>
+      <div class="receipt-head-text">
+        <p>Hi There!</p>
+        <h3>Mark Anthony Caitor</h3>
+      </div>
+    </div>
+
+    <p class="receipt-subtitle">
+      Here’s the list to complete before proceeding to CARES for CLEARANCE
+    </p>
+
+    <div class="receipt-instruction">
+      PLEASE ENTER THE 6 DIGIT OR NUMBER OF FOUND IN THE RECEIPT
+    </div>
+
+    <div class="receipt-digits" id="receiptDigits">
+      <input class="receipt-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" aria-label="Digit 1" />
+      <input class="receipt-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 2" />
+      <input class="receipt-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 3" />
+      <input class="receipt-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 4" />
+      <input class="receipt-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 5" />
+      <input class="receipt-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 6" />
+    </div>
+
+    <button class="receipt-verify" id="verifyReceiptBtn" type="button" disabled>VERIFY</button>
+
+    <p class="receipt-status" id="receiptStatus" hidden>Please wait for approval...</p>
+  </div>
+</div>
+
+<!-- SEMINAR PASSWORD MODAL -->
+<div class="simple-modal" id="passwordModal" aria-hidden="true">
+  <div class="simple-modal-card password-card" role="dialog" aria-modal="true" aria-labelledby="passwordModalTitle">
+    <button class="simple-modal-close" id="closePasswordModal" type="button" aria-label="Close password modal">
+      <i class="ri-close-line"></i>
+    </button>
+
+    <div class="simple-modal-title">
+      <h3 id="passwordModalTitle">Enter Password</h3>
+      <p>Please ask assistant CARES office for password.</p>
+    </div>
+
+    <div class="password-inputs" id="passwordInputs">
+      <input class="password-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 1" />
+      <input class="password-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2" />
+      <input class="password-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3" />
+      <input class="password-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4" />
+      <input class="password-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5" />
+      <input class="password-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 6" />
+      <input class="password-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 7" />
+      <input class="password-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 8" />
+    </div>
+
+    <button class="simple-modal-action" id="verifyPasswordBtn" type="button" disabled>VERIFY</button>
+    <p class="simple-modal-message" id="passwordMessage" hidden></p>
+  </div>
+</div>
+
+<!-- GENERIC INFO MODAL -->
+<div class="simple-modal" id="infoModal" aria-hidden="true">
+  <div class="simple-modal-card" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
+    <button class="simple-modal-close" id="closeInfoModal" type="button" aria-label="Close info modal">
+      <i class="ri-close-line"></i>
+    </button>
+
+    <div class="simple-modal-title">
+      <h3 id="infoModalTitle">Notice</h3>
+      <p id="infoModalMessage"></p>
+    </div>
+
+    <button class="simple-modal-action" id="infoOkBtn" type="button">OK</button>
+  </div>
+</div>
+
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="video-modal-card" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+    <button class="simple-modal-close" id="closeVideoModal" type="button" aria-label="Close video modal">
+      <i class="ri-close-line"></i>
+    </button>
+
+    <div class="video-modal-frame">
+      <iframe
+        id="seminarVideoFrame"
+        title="Seminar Replay"
+        src=""
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
 
   <script src="script.js"></script>
 </body>
