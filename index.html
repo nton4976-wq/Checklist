@@ -1,8 +1,4 @@
-# Responsive Clearance Search Demo (Updated)
 
-Replace your current file with this complete responsive version.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,6 +153,12 @@ body{
   display:flex;
   gap:10px;
   margin-top:20px;
+  flex-wrap:wrap;
+}
+
+button{
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
 }
 
 .btn{
@@ -167,6 +169,10 @@ body{
   font-weight:800;
   cursor:pointer;
   transition:.2s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
 }
 
 .btn:active{
@@ -275,14 +281,16 @@ body{
   }
 
   .actions{
-    flex-direction:column;
+    display:grid;
+    grid-template-columns:1fr;
   }
 
-  .btn.ghost{
+  .btn.ghost,
+  .btn.primary{
     width:100%;
-    height:52px;
   }
 }
+
 </style>
 </head>
 <body>
@@ -331,11 +339,11 @@ body{
     />
 
     <div class="actions">
-      <button class="btn primary" id="searchBtn">
+      <button class="btn primary" id="searchBtn" type="button">
         Search Alumni
       </button>
 
-      <button class="btn ghost" id="clearBtn">
+      <button class="btn ghost" id="clearBtn" type="button">
         Clear
       </button>
     </div>
@@ -418,7 +426,7 @@ function renderResult(){
   resultCount.textContent = '1 record';
 
   document.getElementById('viewDemoBtn').addEventListener('click', () => {
-    window.location.href = 'home.html';
+    window.location.href = 'index.html';
   });
 }
 
